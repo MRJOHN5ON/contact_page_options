@@ -1,0 +1,297 @@
+<!-- CONTACT v3 — Organic blobs + soft motion -->
+<!-- Phone matches footerv1 placeholder — swap when needed. -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+  .rk-contact-v3 {
+    --blue: #3498db;
+    --blue-soft: rgba(52, 152, 219, 0.22);
+    --red: #e74c3c;
+    --red-soft: rgba(231, 76, 60, 0.14);
+    --gold: #dba523;
+    --ink: #1a1f26;
+    --muted: #4a5568;
+    font-family: 'Outfit', system-ui, sans-serif;
+    color: var(--ink);
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 48px) clamp(16px, 4vw, 36px);
+    background:
+      radial-gradient(ellipse 90% 70% at 10% 20%, var(--blue-soft), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 92% 30%, var(--red-soft), transparent 50%),
+      linear-gradient(165deg, #f8fafc 0%, #eef6ff 48%, #fff8ec 100%);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .rk-contact-v3 * { box-sizing: border-box; }
+
+  .rk-contact-v3__bg-blob {
+    position: absolute;
+    border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+    filter: blur(0);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    animation: rk-cv3-morph 18s ease-in-out infinite alternate;
+  }
+
+  .rk-contact-v3__bg-blob--a {
+    width: min(420px, 70vw);
+    height: min(420px, 70vw);
+    top: -12%;
+    right: -8%;
+    background: linear-gradient(140deg, var(--gold), rgba(52, 152, 219, 0.35));
+    animation-delay: -4s;
+  }
+
+  .rk-contact-v3__bg-blob--b {
+    width: min(360px, 60vw);
+    height: min(360px, 60vw);
+    bottom: -18%;
+    left: -10%;
+    background: linear-gradient(200deg, var(--blue), rgba(231, 76, 60, 0.25));
+    animation-delay: -9s;
+  }
+
+  @keyframes rk-cv3-morph {
+    0% { border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%; transform: translate(0, 0) rotate(0deg); }
+    100% { border-radius: 40% 60% 45% 55% / 55% 45% 55% 45%; transform: translate(-12px, 10px) rotate(6deg); }
+  }
+
+  .rk-contact-v3__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(22px, 3vw, 32px);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 920px) {
+    .rk-contact-v3__inner {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+  }
+
+  .rk-contact-v3__portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .rk-contact-v3__blob-photo {
+    position: relative;
+    width: min(300px, 72vw);
+    aspect-ratio: 1;
+    animation: rk-cv3-float 5.5s ease-in-out infinite;
+  }
+
+  @keyframes rk-cv3-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .rk-contact-v3__blob-photo::before {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background: conic-gradient(from 120deg, var(--blue), var(--gold), var(--red), var(--blue));
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    z-index: 0;
+    animation: rk-cv3-morph 12s ease-in-out infinite;
+    opacity: 0.85;
+  }
+
+  .rk-contact-v3__blob-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 58% 42% 48% 52% / 52% 46% 54% 48%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 50px rgba(26, 31, 38, 0.15);
+  }
+
+  .rk-contact-v3__logo {
+    width: min(190px, 50vw);
+    height: auto;
+    filter: drop-shadow(0 12px 28px rgba(52, 152, 219, 0.2));
+  }
+
+  .rk-contact-v3__card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border-radius: 28px;
+    padding: clamp(24px, 4vw, 36px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      0 4px 24px rgba(52, 152, 219, 0.08),
+      0 1px 3px rgba(26, 31, 38, 0.06);
+  }
+
+  .rk-contact-v3__card h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.45rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+  }
+
+  .rk-contact-v3__card h1 em {
+    font-style: italic;
+    color: var(--blue);
+  }
+
+  .rk-contact-v3__card p.lead {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .rk-contact-v3__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .rk-contact-v3__chips a {
+    display: inline-flex;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--ink);
+    background: rgba(228, 242, 251, 0.9);
+    border: 1px solid rgba(52, 152, 219, 0.25);
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .rk-contact-v3__chips a:hover,
+  .rk-contact-v3__chips a:focus-visible {
+    background: #fff;
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .rk-contact-v3__chips a:nth-child(2) {
+    background: rgba(255, 243, 224, 0.95);
+    border-color: rgba(219, 165, 35, 0.35);
+  }
+
+  .rk-contact-v3__address {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-style: normal;
+    padding-left: 1rem;
+    border-left: 3px solid var(--red);
+  }
+
+  .rk-contact-v3__map {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    aspect-ratio: 16 / 10;
+    min-height: 200px;
+    position: relative;
+    margin-bottom: 1.35rem;
+  }
+
+  .rk-contact-v3__map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .rk-contact-v3__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(115deg, var(--red), #c0392b);
+    box-shadow: 0 8px 28px rgba(231, 76, 60, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .rk-contact-v3__cta:hover,
+  .rk-contact-v3__cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(231, 76, 60, 0.35);
+    outline: none;
+  }
+</style>
+
+<section class="rk-contact-v3" aria-label="Contact">
+  <div class="rk-contact-v3__bg-blob rk-contact-v3__bg-blob--a" aria-hidden="true"></div>
+  <div class="rk-contact-v3__bg-blob rk-contact-v3__bg-blob--b" aria-hidden="true"></div>
+
+  <div class="rk-contact-v3__inner">
+    <div class="rk-contact-v3__portrait">
+      <div class="rk-contact-v3__blob-photo">
+        <img
+          src="https://i.postimg.cc/CM9dhPMb/Allie-Training-97.jpg"
+          alt="Allie Church"
+          width="600"
+          height="600"
+          loading="lazy"
+        >
+      </div>
+      <img
+        class="rk-contact-v3__logo"
+        src="https://i.postimg.cc/QNBPSC3P/upscaled-2x-traced-unnamed.png"
+        alt="Restorative Kinetics"
+        width="380"
+        height="114"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="rk-contact-v3__card">
+      <h1>Hello—I’m <em>Allie Church.</em></h1>
+      <p class="lead">Training, recovery, and sustainable movement—let’s connect.</p>
+
+      <div class="rk-contact-v3__chips">
+        <a href="tel:+15555555555">(555) 555-5555</a>
+        <a href="mailto:restorativekinetics@gmail.com">restorativekinetics@gmail.com</a>
+      </div>
+
+      <address class="rk-contact-v3__address">
+        1847 Axtell Gateway Rd<br>
+        Gallatin Gateway, MT 59730
+      </address>
+
+      <div class="rk-contact-v3__map">
+        <iframe
+          title="Map: 1847 Axtell Gateway Rd, Gallatin Gateway, MT"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=1847+Axtell+Gateway+Rd,+Gallatin+Gateway,+MT+59730&amp;output=embed"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <a
+        class="rk-contact-v3__cta"
+        href="mailto:restorativekinetics@gmail.com?subject=Free%2060%20min%20consult"
+      >Free 60 min consult</a>
+    </div>
+  </div>
+</section>

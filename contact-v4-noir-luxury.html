@@ -1,0 +1,308 @@
+<!-- CONTACT v4 — Noir luxury (gold + blue accents on dark) -->
+<!-- Phone matches footerv1 placeholder — swap when needed. -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600&display=swap');
+
+  .rk-contact-v4 {
+    --blue: #3498db;
+    --blue-glow: rgba(52, 152, 219, 0.35);
+    --gold: #dba523;
+    --gold-dim: rgba(219, 165, 35, 0.22);
+    --red: #e74c3c;
+    --void: #0c0f14;
+    --panel: #12161f;
+    --text: #e8ecf2;
+    --muted: #9aa3b2;
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: var(--text);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 52px) clamp(18px, 4vw, 40px);
+    background:
+      radial-gradient(ellipse 120% 80% at 50% -20%, var(--gold-dim), transparent 55%),
+      radial-gradient(circle at 85% 60%, rgba(52, 152, 219, 0.08), transparent 45%),
+      var(--void);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .rk-contact-v4 * { box-sizing: border-box; }
+
+  .rk-contact-v4::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .rk-contact-v4__frame {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(219, 165, 35, 0.35);
+    border-radius: 4px;
+    padding: clamp(22px, 3.5vw, 36px);
+    background: linear-gradient(160deg, rgba(18, 22, 31, 0.95), rgba(12, 15, 20, 0.98));
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 24px 80px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .rk-contact-v4__frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.7;
+  }
+
+  .rk-contact-v4__grid {
+    display: grid;
+    gap: clamp(24px, 4vw, 40px);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .rk-contact-v4__grid {
+      grid-template-columns: 0.88fr 1.12fr;
+    }
+  }
+
+  .rk-contact-v4__portrait {
+    text-align: center;
+  }
+
+  .rk-contact-v4__photo-shell {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .rk-contact-v4__photo-shell::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--gold), var(--blue), var(--gold));
+    border-radius: 2px;
+    opacity: 0.85;
+    z-index: 0;
+  }
+
+  .rk-contact-v4__photo-shell img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(300px, 78vw);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 2px;
+    filter: contrast(1.05) saturate(0.92);
+  }
+
+  .rk-contact-v4__logo {
+    width: min(200px, 52vw);
+    height: auto;
+    opacity: 0.95;
+    filter: brightness(1.08);
+  }
+
+  .rk-contact-v4__provider {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 0.65rem;
+  }
+
+  .rk-contact-v4__copy h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.1rem, 4vw, 2.85rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.12;
+    margin: 0 0 0.5rem;
+    color: #fff;
+  }
+
+  .rk-contact-v4__copy h1 span {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .rk-contact-v4__rule {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--blue));
+    margin: 0 0 1.25rem;
+    border-radius: 1px;
+  }
+
+  .rk-contact-v4__copy p.tagline {
+    margin: 0 0 1.75rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.75;
+    font-size: 1.02rem;
+    max-width: 44ch;
+  }
+
+  .rk-contact-v4__links {
+    display: grid;
+    gap: 0.85rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .rk-contact-v4__links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    font-weight: 500;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+
+  .rk-contact-v4__links a::after {
+    content: '→';
+    color: var(--blue);
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+
+  .rk-contact-v4__links a:hover,
+  .rk-contact-v4__links a:focus-visible {
+    border-color: var(--blue-glow);
+    box-shadow: 0 0 24px rgba(52, 152, 219, 0.12);
+    color: #fff;
+    outline: none;
+  }
+
+  .rk-contact-v4__address {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+    font-style: normal;
+    line-height: 1.65;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .rk-contact-v4__map {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(219, 165, 35, 0.25);
+    aspect-ratio: 16 / 10;
+    min-height: 200px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .rk-contact-v4__map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(0.25) contrast(1.08) brightness(0.85);
+  }
+
+  .rk-contact-v4__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.05rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--void);
+    background: linear-gradient(100deg, var(--gold), #e8c04a);
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 28px rgba(219, 165, 35, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .rk-contact-v4__cta:hover,
+  .rk-contact-v4__cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(219, 165, 35, 0.35);
+    outline: none;
+  }
+</style>
+
+<section class="rk-contact-v4" aria-label="Contact">
+  <div class="rk-contact-v4__frame">
+    <div class="rk-contact-v4__grid">
+      <div class="rk-contact-v4__portrait">
+        <div class="rk-contact-v4__photo-shell">
+          <img
+            src="https://i.postimg.cc/CM9dhPMb/Allie-Training-97.jpg"
+            alt="Allie Church"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+        </div>
+        <img
+          class="rk-contact-v4__logo"
+          src="https://i.postimg.cc/QNBPSC3P/upscaled-2x-traced-unnamed.png"
+          alt="Restorative Kinetics"
+          width="400"
+          height="120"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="rk-contact-v4__copy">
+        <p class="rk-contact-v4__provider">Allie Church</p>
+        <h1>Reach <span>out</span></h1>
+        <div class="rk-contact-v4__rule" aria-hidden="true"></div>
+        <p class="tagline">I’m Allie Church—consultations, questions, and next steps. Send a note or call the studio.</p>
+
+        <div class="rk-contact-v4__links">
+          <a href="tel:+15555555555">(555) 555-5555</a>
+          <a href="mailto:restorativekinetics@gmail.com">restorativekinetics@gmail.com</a>
+        </div>
+
+        <address class="rk-contact-v4__address">
+          1847 Axtell Gateway Rd · Gallatin Gateway, MT 59730
+        </address>
+
+        <div class="rk-contact-v4__map">
+          <iframe
+            title="Map: 1847 Axtell Gateway Rd, Gallatin Gateway, MT"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=1847+Axtell+Gateway+Rd,+Gallatin+Gateway,+MT+59730&amp;output=embed"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a
+          class="rk-contact-v4__cta"
+          href="mailto:restorativekinetics@gmail.com?subject=Free%2060%20min%20consult"
+        >Free 60 min consult</a>
+      </div>
+    </div>
+  </div>
+</section>

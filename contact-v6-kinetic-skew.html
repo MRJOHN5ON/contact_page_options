@@ -1,0 +1,455 @@
+<!-- CONTACT v6 — Matches footerv7.html (kinetic skew strip, Unbounded + DM Sans, site triad) -->
+<!-- Phone matches footer placeholder — swap tel:+15555555555 + visible digits when needed. -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+  .kn-contact {
+    --rk-blue: #3498db;
+    --rk-blue-mid: #2b78a4;
+    --rk-blue-deep: #1f6fa3;
+    --rk-red: #e74c3c;
+    --rk-yellow: #f1c40f;
+    --rk-bg-soft: #f8fafb;
+    --kn-pad-x: clamp(20px, 5vw, 48px);
+    --kn-pad-y: clamp(40px, 7vw, 72px);
+    --kn-gap-main: clamp(32px, 5vw, 48px);
+    --kn-gap-stack: 1.25rem;
+    --kn-logo-tile: url('https://i.postimg.cc/DydWxQFJ/upscaled-2x-traced-unnamed.png');
+    font-family: 'DM Sans', sans-serif !important;
+    padding: 0;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    position: relative;
+    overflow: hidden;
+    background: var(--rk-bg-soft);
+  }
+
+  .kn-contact * {
+    box-sizing: border-box;
+  }
+
+  /* !important beats Squarespace section/block skins that force white fills */
+  section.kn-contact .kn-contact__strip {
+    /* Dense monogram grid — width drives repeat; height follows asset aspect */
+    --kn-mono-w: clamp(56px, 9.5vw, 104px);
+    background: linear-gradient(
+      125deg,
+      var(--rk-blue-deep) 0%,
+      var(--rk-blue-mid) 42%,
+      var(--rk-blue) 100%
+    ) !important;
+    color: #fff !important;
+    transform: skewY(-2.5deg);
+    margin: clamp(24px, 5vw, 48px) 0 clamp(24px, 5vw, 48px);
+    padding: var(--kn-pad-y) var(--kn-pad-x);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-shadow:
+      0 -5px 0 var(--rk-red),
+      0 5px 0 var(--rk-yellow),
+      0 24px 40px rgba(31, 111, 163, 0.35);
+  }
+
+  /* Monogram tile: true PNG colors (no blend) — transparent areas show the strip gradient */
+  section.kn-contact .kn-contact__strip::before,
+  section.kn-contact .kn-contact__strip::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -12%;
+    right: -12%;
+    bottom: -20%;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--kn-logo-tile);
+    background-repeat: repeat;
+    background-size: var(--kn-mono-w) auto;
+    opacity: 1;
+  }
+
+  section.kn-contact .kn-contact__strip::before {
+    --kn-mono-y: calc(var(--kn-mono-w) * 0.34);
+    background-position: 0 0;
+  }
+
+  section.kn-contact .kn-contact__strip::after {
+    --kn-mono-y: calc(var(--kn-mono-w) * 0.34);
+    background-position: calc(var(--kn-mono-w) * 0.5) var(--kn-mono-y);
+  }
+
+  section.kn-contact .kn-contact__strip-inner {
+    transform: skewY(2.5deg);
+    max-width: 1040px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
+  }
+
+  /* SS code blocks often paint white behind nested columns — kills white-on-blue type */
+  section.kn-contact .kn-contact__top,
+  section.kn-contact .kn-contact__col-left,
+  section.kn-contact .kn-contact__side,
+  section.kn-contact .kn-contact__map-wrap,
+  section.kn-contact .kn-contact__visual {
+    background: transparent !important;
+  }
+
+  /* ——— Top: [ copy + map ] | portrait ——— */
+  .kn-contact__top {
+    display: grid;
+    gap: var(--kn-gap-main);
+    align-items: start;
+    position: relative;
+    z-index: 1;
+    padding: clamp(16px, 2.8vw, 26px);
+    border-radius: 18px;
+    background: rgba(6, 24, 42, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+    backdrop-filter: blur(20px) saturate(1.25);
+  }
+
+  @media (min-width: 768px) {
+    .kn-contact__top {
+      grid-template-columns: minmax(0, 1.15fr) minmax(240px, 360px);
+      gap: clamp(32px, 5vw, 52px);
+      align-items: stretch;
+    }
+  }
+
+  .kn-contact__col-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
+    min-width: 0;
+    min-height: 0;
+  }
+
+  section.kn-contact .kn-contact__col-left > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .kn-contact__col-left::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      var(--rk-red) 0%,
+      var(--rk-yellow) 50%,
+      var(--rk-blue) 100%
+    );
+    border-radius: 3px;
+  }
+
+  .kn-contact__side {
+    position: relative;
+    padding-bottom: 0;
+    max-width: none;
+  }
+
+  section.kn-contact .kn-contact__name {
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(1.85rem, 4.2vw, 2.85rem);
+    line-height: 1.05;
+    margin: 0 0 var(--kn-gap-stack);
+    padding-left: 1rem;
+    letter-spacing: -0.03em;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.45),
+      0 2px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .kn-contact__creds {
+    margin: 0 0 var(--kn-gap-stack);
+    padding: 0 0 0 1rem;
+    list-style: none;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 1px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .kn-contact__creds li + li {
+    margin-top: 0.35rem;
+  }
+
+  .kn-contact__address {
+    margin: 0 0 1.75rem;
+    padding: 0 0 1.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.98);
+    font-style: normal;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 1px 14px rgba(0, 0, 0, 0.35);
+  }
+
+  section.kn-contact .kn-contact__reach-label {
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.68rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin: 0 0 0.85rem;
+    padding-left: 1rem;
+    color: var(--rk-yellow);
+  }
+
+  .kn-contact__links {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  section.kn-contact .kn-contact__phone,
+  section.kn-contact .kn-contact__mail {
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(1rem, 2.1vw, 1.15rem);
+    color: #fff;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.45),
+      0 1px 14px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    padding: 0.15rem 0;
+    line-height: 1.3;
+    background: linear-gradient(90deg, currentColor, currentColor) 0 100% / 100% 2px no-repeat;
+    transition: background-size 0.25s ease, color 0.25s ease;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  section.kn-contact .kn-contact__mail {
+    font-weight: 500 !important;
+    font-size: clamp(0.85rem, 1.9vw, 0.98rem) !important;
+  }
+
+  .kn-contact__phone:hover,
+  .kn-contact__mail:hover {
+    background-size: 0% 2px;
+    color: var(--rk-yellow);
+  }
+
+  .kn-contact__phone:focus-visible,
+  .kn-contact__mail:focus-visible {
+    outline: 2px solid var(--rk-red);
+    outline-offset: 6px;
+  }
+
+  .kn-contact__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--rk-blue-deep);
+    background: var(--rk-yellow);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 var(--rk-red);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .kn-contact__cta:hover,
+  .kn-contact__cta:focus-visible {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--rk-red);
+    outline: none;
+  }
+
+  .kn-contact__cta:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+  }
+
+  /* ——— Right: photo ——— */
+  .kn-contact__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .kn-contact__visual {
+      align-items: stretch;
+      text-align: left;
+      gap: 1.5rem;
+      height: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  .kn-contact__photo-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .kn-contact__photo-wrap {
+      margin: 0;
+      max-width: none;
+    }
+  }
+
+  .kn-contact__photo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+      0 8px 28px rgba(0, 0, 0, 0.2);
+  }
+
+  section.kn-contact .kn-contact__loc {
+    font-family: 'Unbounded', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--rk-yellow);
+    opacity: 0.95;
+  }
+
+  /* Map: under copy, left of photo (desktop) */
+  .kn-contact__map-wrap {
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .kn-contact__map {
+    position: relative;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    min-height: 200px;
+    aspect-ratio: 4 / 3;
+  }
+
+  @media (min-width: 768px) {
+    .kn-contact__map {
+      min-height: 220px;
+      max-height: 340px;
+      flex: 1 1 auto;
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .kn-contact__map {
+      max-height: 260px;
+    }
+  }
+
+  .kn-contact__map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+
+<section class="kn-contact" aria-label="Contact Allie Church">
+  <div class="kn-contact__strip">
+    <div class="kn-contact__strip-inner">
+      <div class="kn-contact__top">
+        <div class="kn-contact__col-left">
+          <div class="kn-contact__side">
+            <div class="kn-contact__name">Allie Church</div>
+            <ul class="kn-contact__creds">
+              <li>NSCA Certified Personal Trainer</li>
+              <li>Certified Biomechanics Specialist</li>
+              <li>Level 1 PPSC Pain Free Performance Coach</li>
+            </ul>
+            <address class="kn-contact__address">
+              1847 Axtell Gateway Rd<br>
+              Gallatin Gateway, MT 59730
+            </address>
+
+            <p class="kn-contact__reach-label">Reach out</p>
+            <div class="kn-contact__links">
+              <a class="kn-contact__phone" href="tel:+15555555555">(555) 555-5555</a>
+              <a class="kn-contact__mail" href="mailto:restorativekinetics@gmail.com">restorativekinetics@gmail.com</a>
+            </div>
+
+            <a
+              class="kn-contact__cta"
+              href="mailto:restorativekinetics@gmail.com?subject=Free%2060%20min%20consult"
+            >Free 60 min consult</a>
+          </div>
+
+          <div class="kn-contact__map-wrap">
+            <div class="kn-contact__map">
+              <iframe
+                title="Map: 1847 Axtell Gateway Rd, Gallatin Gateway, MT"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=1847+Axtell+Gateway+Rd,+Gallatin+Gateway,+MT+59730&amp;output=embed"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="kn-contact__visual">
+          <div class="kn-contact__photo-wrap">
+            <img
+              class="kn-contact__photo"
+              src="https://i.postimg.cc/CM9dhPMb/Allie-Training-97.jpg"
+              width="560"
+              height="560"
+              alt="Allie Church"
+              loading="lazy"
+            >
+          </div>
+          <p class="kn-contact__loc">Gallatin, Montana</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
