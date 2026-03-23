@@ -1,7 +1,23 @@
-<!-- CONTACT v1 — Editorial glass (tokens from methodology.html) -->
-<!-- Phone matches footerv1 placeholder — swap tel:+15555555555 + visible digits when you have the real number. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 1</title>
+  <!-- CONTACT v1 — Editorial glass -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
 
   .rk-contact-v1 {
     --blue: #3498db;
@@ -245,7 +261,49 @@
     filter: brightness(1.05);
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    .rk-contact-v1 {
+      padding: clamp(18px, 5vi, 28px);
+    }
+
+    .rk-contact-v1__photo-wrap {
+      width: min(300px, 88vi);
+    }
+
+    .rk-contact-v1__logo {
+      width: min(220px, 72vi);
+    }
+
+    .rk-contact-v1 h1 {
+      font-size: clamp(2rem, 7.5vi, 2.5rem);
+    }
+
+    .rk-contact-v1__lead {
+      font-size: clamp(1.0625rem, 4.2vi, 1.125rem);
+    }
+
+    .rk-contact-v1__links a {
+      min-height: 48px;
+      padding: 0.85rem 1rem;
+      font-size: 1.05rem;
+    }
+
+    .rk-contact-v1__cta {
+      display: flex;
+      min-height: 52px;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .rk-contact-v1__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="rk-contact-v1" aria-label="Contact">
   <div class="rk-contact-v1__grid">
@@ -306,3 +364,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>

@@ -1,7 +1,31 @@
-<!-- CONTACT v6 — Matches footerv7.html (kinetic skew strip, Unbounded + DM Sans, site triad) -->
-<!-- Phone matches footer placeholder — swap tel:+15555555555 + visible digits when needed. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 6</title>
+  <!-- CONTACT v6 — Kinetic skew -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
+
+  /* Squarespace full-bleed breakout; keep contained when this file is opened standalone */
+  body > section.kn-contact {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
   .kn-contact {
     --rk-blue: #3498db;
@@ -392,7 +416,64 @@
     height: 100%;
     border: 0;
   }
+
+  @media (max-width: 599px) {
+    section.kn-contact .kn-contact__strip {
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: clamp(28px, 8vi, 48px);
+      padding-bottom: clamp(28px, 8vi, 48px);
+    }
+
+    section.kn-contact .kn-contact__name {
+      font-size: clamp(2rem, 8vi, 2.85rem);
+    }
+
+    .kn-contact__creds {
+      font-size: clamp(0.95rem, 3.8vi, 1rem);
+    }
+
+    .kn-contact__address {
+      font-size: clamp(0.95rem, 3.8vi, 1rem);
+    }
+
+    section.kn-contact .kn-contact__reach-label {
+      font-size: clamp(0.72rem, 2.8vi, 0.78rem);
+    }
+
+    section.kn-contact .kn-contact__phone {
+      font-size: clamp(1.1rem, 4.5vi, 1.25rem);
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    section.kn-contact .kn-contact__mail {
+      font-size: clamp(0.95rem, 3.8vi, 1.05rem) !important;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .kn-contact__cta {
+      min-height: 52px;
+      padding: 0.95rem 1.5rem;
+      font-size: clamp(0.78rem, 3vi, 0.85rem);
+    }
+
+    .kn-contact__photo-wrap {
+      max-width: min(320px, 88vi);
+    }
+
+    .kn-contact__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+      max-height: none;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="kn-contact" aria-label="Contact Allie Church">
   <div class="kn-contact__strip">
@@ -453,3 +534,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>

@@ -1,7 +1,23 @@
-<!-- CONTACT v2 — Brutalist ribbon + sharp grid -->
-<!-- Phone matches footerv1 placeholder — swap when needed. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 2</title>
+  <!-- CONTACT v2 — Brutalist ribbon -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
 
   .rk-contact-v2 {
     --ink: #0b0f14;
@@ -216,7 +232,50 @@
     box-shadow: 3px 3px 0 var(--ink);
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    .rk-contact-v2 {
+      padding: clamp(14px, 4vi, 22px);
+    }
+
+    .rk-contact-v2__ribbon h1 {
+      font-size: clamp(1.5rem, 6.5vi, 2rem);
+    }
+
+    .rk-contact-v2__photo-block,
+    .rk-contact-v2__photo-block img {
+      min-height: min(280px, 52vi);
+    }
+
+    .rk-contact-v2__logo-row img {
+      width: min(200px, 70vi);
+    }
+
+    .rk-contact-v2__meta {
+      font-size: 1.05rem;
+    }
+
+    .rk-contact-v2__meta a {
+      display: inline-block;
+      min-height: 44px;
+      line-height: 1.5;
+      padding: 0.35rem 0;
+    }
+
+    .rk-contact-v2__cta {
+      min-height: 52px;
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+    }
+
+    .rk-contact-v2__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="rk-contact-v2" aria-label="Contact">
   <div class="rk-contact-v2__ribbon">
@@ -284,3 +343,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>

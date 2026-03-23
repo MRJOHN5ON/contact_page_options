@@ -1,7 +1,23 @@
-<!-- CONTACT v4 — Noir luxury (gold + blue accents on dark) -->
-<!-- Phone matches footerv1 placeholder — swap when needed. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 4</title>
+  <!-- CONTACT v4 — Noir luxury -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
 
   .rk-contact-v4 {
     --blue: #3498db;
@@ -248,7 +264,60 @@
     box-shadow: 0 8px 36px rgba(219, 165, 35, 0.35);
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    .rk-contact-v4 {
+      padding: clamp(20px, 5vi, 40px) clamp(14px, 4vi, 28px);
+    }
+
+    .rk-contact-v4__frame {
+      padding: clamp(18px, 4vi, 28px);
+    }
+
+    .rk-contact-v4__photo-shell img {
+      width: min(320px, 88vi);
+    }
+
+    .rk-contact-v4__logo {
+      width: min(230px, 75vi);
+    }
+
+    .rk-contact-v4__provider {
+      font-size: clamp(0.72rem, 2.8vi, 0.78rem);
+    }
+
+    .rk-contact-v4__copy h1 {
+      font-size: clamp(2.25rem, 8vi, 2.85rem);
+    }
+
+    .rk-contact-v4__copy p.tagline {
+      font-size: clamp(1.0625rem, 4vi, 1.125rem);
+    }
+
+    .rk-contact-v4__links a {
+      min-height: 52px;
+      padding: 1rem 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    .rk-contact-v4__address {
+      font-size: clamp(0.8rem, 3.2vi, 0.875rem);
+      letter-spacing: 0.1em;
+    }
+
+    .rk-contact-v4__cta {
+      min-height: 52px;
+      font-size: clamp(0.8rem, 3.2vi, 0.85rem);
+    }
+
+    .rk-contact-v4__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="rk-contact-v4" aria-label="Contact">
   <div class="rk-contact-v4__frame">
@@ -306,3 +375,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>

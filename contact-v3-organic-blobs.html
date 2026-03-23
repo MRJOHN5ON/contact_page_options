@@ -1,7 +1,23 @@
-<!-- CONTACT v3 — Organic blobs + soft motion -->
-<!-- Phone matches footerv1 placeholder — swap when needed. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 3</title>
+  <!-- CONTACT v3 — Organic blobs -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
 
   .rk-contact-v3 {
     --blue: #3498db;
@@ -237,7 +253,48 @@
     box-shadow: 0 12px 36px rgba(231, 76, 60, 0.35);
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    .rk-contact-v3 {
+      padding: clamp(20px, 5vi, 36px) clamp(14px, 4vi, 24px);
+    }
+
+    .rk-contact-v3__blob-photo {
+      width: min(320px, 88vi);
+    }
+
+    .rk-contact-v3__logo {
+      width: min(220px, 72vi);
+    }
+
+    .rk-contact-v3__card h1 {
+      font-size: clamp(2rem, 7vi, 2.45rem);
+    }
+
+    .rk-contact-v3__card p.lead {
+      font-size: clamp(1.0625rem, 4vi, 1.125rem);
+    }
+
+    .rk-contact-v3__chips a {
+      min-height: 48px;
+      align-items: center;
+      font-size: 1rem;
+      padding: 0.65rem 1.15rem;
+    }
+
+    .rk-contact-v3__cta {
+      min-height: 52px;
+      font-size: 1.05rem;
+    }
+
+    .rk-contact-v3__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="rk-contact-v3" aria-label="Contact">
   <div class="rk-contact-v3__bg-blob rk-contact-v3__bg-blob--a" aria-hidden="true"></div>
@@ -295,3 +352,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>

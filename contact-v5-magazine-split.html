@@ -1,7 +1,23 @@
-<!-- CONTACT v5 — Magazine split + diagonal energy -->
-<!-- Phone matches footerv1 placeholder — swap when needed. -->
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — Version 5</title>
+  <!-- CONTACT v5 — Magazine split -->
+  <style>
   @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
 
   .rk-contact-v5 {
     --blue: #3498db;
@@ -258,7 +274,69 @@
     box-shadow: 0 2px 0 var(--gold);
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    .rk-contact-v5 {
+      padding: clamp(12px, 3.5vi, 20px);
+    }
+
+    .rk-contact-v5__logo {
+      width: min(220px, 72vi);
+    }
+
+    .rk-contact-v5__photo-cut {
+      max-width: min(380px, 92vi);
+    }
+
+    .rk-contact-v5__kicker {
+      font-size: clamp(0.75rem, 3vi, 0.8rem);
+    }
+
+    .rk-contact-v5__panel h1 {
+      font-size: clamp(2.1rem, 7.5vi, 2.75rem);
+    }
+
+    .rk-contact-v5__panel > p.lead {
+      font-size: clamp(1.0625rem, 4vi, 1.125rem);
+    }
+
+    .rk-contact-v5__row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .rk-contact-v5__row span[aria-hidden="true"] {
+      display: none;
+    }
+
+    .rk-contact-v5__row a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      font-size: 1.05rem;
+      padding: 0.35rem 0;
+    }
+
+    .rk-contact-v5__address {
+      font-size: 1.05rem;
+    }
+
+    .rk-contact-v5__cta {
+      align-self: stretch;
+      justify-content: center;
+      min-height: 52px;
+      font-size: 0.95rem;
+    }
+
+    .rk-contact-v5__map {
+      min-height: 240px;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
+</head>
+<body>
 
 <section class="rk-contact-v5" aria-label="Contact">
   <div class="rk-contact-v5__shell">
@@ -317,3 +395,6 @@
     </div>
   </div>
 </section>
+
+</body>
+</html>
